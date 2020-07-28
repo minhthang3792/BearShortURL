@@ -1,10 +1,11 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const url_controller = require('../controller/url.controller');
+const urlController = require("../controller/url.controller");
+const homeController = require("../controller/home.controller");
 
-
-router.post('/hashUrl', url_controller.hashUrl);
-router.get('/hash/:id', url_controller.getOrginalUrl);
+router.post("/hashUrl", urlController.hashUrl);
+router.get("/hash/:id", urlController.getOrginalUrl);
+router.get("", homeController.display);
 
 module.exports = router;

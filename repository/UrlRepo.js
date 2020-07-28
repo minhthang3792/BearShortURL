@@ -6,12 +6,27 @@ module.exports.findUrl = async (url) => {
     .collection("Url")
     .findOne(url)
     .then((item) => {
-      console.log(item);
       return item;
     });
-  if (result == null){
-      return null;
+  if (result == null) {
+    return null;
   } else {
-      return result;
+    return result;
   }
+};
+
+module.exports.insert = (record) => {
+  const result = db
+    .getClient()
+    .collection("Url")
+    .insertOne(record)
+    .then((data) => {
+      console.log("Insert success");
+      return true;
+    })
+    .catch((err) => {
+      console.error("Insert error: " + err);
+      return false;
+    });
+  return result;
 };
