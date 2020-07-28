@@ -9,7 +9,6 @@ module.exports.findUrl = async (url) => {
       console.log(item);
       return item;
     });
-  console.log("Repo: " + result);
   if (result == null){
       return null;
   } else {
