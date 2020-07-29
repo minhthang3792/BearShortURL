@@ -3,10 +3,14 @@ html
     link(rel="stylesheet", href="css/bootstrap.css")
     script(src="js/bootstrap.js")
     title BearShortURL
-    body
-        h1(class="text-success") Hello World!
-        p Nothing to see here.
-        form(action="/tool/hashUrl", method="post")
-            label Orginal URL
-            input(type="text", name="txtOriginalUrl")
-            input(class="btn btn-primary" type="submit", value="Submit")        
+    body(style="text-align:center")
+        div(class="container")
+            h1(class="text-success") Hello buddy!
+            h4 Welcome to 
+                b BearShortURL
+            form(action="/tool/hashUrl", method="post")
+
+                div(class="form-inline justify-content-center")
+                    label(class="mr-sm-2") Orginal URL:
+                    input(class="form-control mr-sm-2 w-50", type="text", name="txtOriginalUrl", placeholder="Enter orginal URL")
+                    button(class="btn btn-primary", type="submit") Submit        

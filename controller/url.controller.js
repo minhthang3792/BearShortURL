@@ -2,7 +2,7 @@ const urlService = require("../service/UrlService");
 
 module.exports.hashUrl = async (req, res) => {
   const result = await urlService.hashUrl(req);
-  res.send(result);
+  res.render("result", { result: result });
 };
 
 module.exports.getOrginalUrl = async (req, res) => {
