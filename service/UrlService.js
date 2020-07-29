@@ -1,5 +1,6 @@
 const BearTool = require("../common/helper/BearTool");
 const urlRepo = require("../repository/UrlRepo");
+const shortId = require("shortid");
 
 module.exports.hashUrl = async (req) => {
   let record = {
@@ -7,8 +8,8 @@ module.exports.hashUrl = async (req) => {
     hash: null,
     createAt: new Date().getMilliseconds,
   };
-  record.url = req.body.txtOriginalUrl;
-  record.hash = BearTool.generateShortURL(record.url, 0, 5);
+  record.url = req.body.txtOriginalUrl + shortId.generate();
+  record.hash = BearTool.generateShortURL(record.url);
 
   const result = await urlRepo.insert(record);
   if (result) {
