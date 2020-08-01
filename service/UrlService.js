@@ -14,7 +14,8 @@ module.exports.hashUrl = async (req) => {
 
   const result = await urlRepo.insert(record);
   if (result) {
-    return "localhost:1234/" + record.hash;
+    // return "localhost:1234/" + record.hash;
+    return "https://bear-short-url.herokuapp.com/" + record.hash;
   } else {
     return null;
   }
