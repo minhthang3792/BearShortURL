@@ -8,8 +8,9 @@ module.exports.hashUrl = async (req) => {
     hash: null,
     createAt: new Date().getMilliseconds,
   };
-  record.url = req.body.txtOriginalUrl + shortId.generate();
-  record.hash = BearTool.generateShortURL(record.url);
+  record.url = req.body.txtOriginalUrl;
+  let urlToHash = record.url + shortId.generate();
+  record.hash = BearTool.generateShortURL(urlToHash);
 
   const result = await urlRepo.insert(record);
   if (result) {

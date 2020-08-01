@@ -2,7 +2,7 @@ const express = require("express");
 const route = require("./route/route");
 const homeRoute = require("./route/home.route");
 const app = express();
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 1234;
 const mongo = require("./datasource/MongoDataSource");
 
 async function main() {
